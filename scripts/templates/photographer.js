@@ -1,17 +1,38 @@
-function photographerTemplate(data) {
-    const { name, portrait } = data;
+function createElementWithClass(type, className, textContent) {
+    const element = document.createElement(type);
+    if (className) element.classList.add(className);
+    if (textContent) element.textContent = textContent;
+    return element;
+}
 
+function createImage(src, alt) {
+    const img = document.createElement('img');
+    img.setAttribute('src', src);
+    img.setAttribute('alt', alt);
+    return img;
+}
+
+function photographerTemplate({ name, portrait, city, country, tagline, price }) {
     const picture = `assets/photographers/${portrait}`;
+    const altText = `${name}'s portrait`;
 
     function getUserCardDOM() {
-        const article = document.createElement( 'article' );
-        const img = document.createElement( 'img' );
-        img.setAttribute("src", picture)
-        const h2 = document.createElement( 'h2' );
-        h2.textContent = name;
-        article.appendChild(img);
-        article.appendChild(h2);
-        return (article);
+        // Create elements
+        const article = createElementWithClass('article');
+        const img = createImage(picture, altText);
+        const a = createElementWithClass('a');
+        a.setAttribute("href", "#"); // Set the actual navigation link here
+        const h2 = createElementWithClass('h2', '', name);
+        const location = createElementWithClass('p', 'location', `${city}, ${country}`);
+        const taglineEl = createElementWithClass('p', 'tagline', tagline);
+        const priceEl = createElementWithClass('p', 'price', `${price}€`);
+
+        // Construct the card
+        a.append(img, h2); // Nesting the h2 within the anchor
+        article.append(a, location, taglineEl, priceEl);
+
+        return article;
     }
-    return { name, picture, getUserCardDOM }
+
+    return { name, picture, getUserCardDOM };
 }
