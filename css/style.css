@@ -49,7 +49,7 @@ h1 {
     font-size: 36px;
 }
 
-.photographer_section article img {
+.photographer_section article img , .photograph-header img {
     height: 200px;
     width: 200px;
     object-fit: cover;
@@ -69,12 +69,20 @@ h1 {
     color: #901C1C;
 }
 
+.photograph-header .country {
+    margin-bottom: 21px;
+}
+
 .tagline {
     color: black;
     font-weight: 400;
 }
 
-.price {
+.price, .photograph-header .tagline {
     color: #757575;
     font-weight: 400;
+}
+
+.photograph-header {
+    padding:0rem 2rem 0rem 2rem;
 }
