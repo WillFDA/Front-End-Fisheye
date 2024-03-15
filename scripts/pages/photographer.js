@@ -20,65 +20,18 @@ async function getThePhotographer() {
   return {photographers, media}
 }
 
-getThePhotographer().then( element => {
-  const photographModel = photographerTemplate(element)
+getThePhotographer().then(data => {
+  const photographModel = photographerTemplate(data).createPhotographeHeader()
   photographHeader.prepend(photographModel.infoPhotograph)
   photographHeader.append(photographModel.imagePhotograph)
+  createTheGallery(data)
 })
 
-
-
-/* 
-async function displayData(photographers, media) {
-  const photographModel = photographerTemplate(photographers, media)
-  photographHeader.prepend(photographModel.infoPhotograph)
-  photographHeader.append(photographModel.imagePhotograph)
+async function createTheGallery(data) {
+  data.media.forEach(content => {
+    const photographModel = photographerTemplate(data)
+    const createGallery = photographModel.createGallery(content)
+    gallery.append(createGallery.figureElement)
+    
+  })
 }
-
-async function init() {
-  let { photographers, media } = await getPhotographers()
-  photographers = photographers.find(photographer => photographer.id === photographerId)
-  media = media.filter(media => media.photographerId === photographerId);
-  displayData(photographers, media)
-}
-
-init()
-*/
-
-
-
-/*
-getPhotographers().then(photograph => {
-  
-
-})
-
-*/
-
-
-/*
-
- async function photographer() {
-  const {photographers} = await getPhotographers()
-  return photographers.find(photographer => photographer.id === photographerId)
-}
-
-async function getMediaPhotographer() {
-  const {media} = await getPhotographers()
-  return media.filter(media => media.photographerId === photographerId);
-}
-
-
-photographer().then(photographer => {
-  const photographModel = createPhotographeHeader(photographer)
-  photographHeader.prepend(photographModel.infoPhotograph)
-  photographHeader.append(photographModel.imagePhotograph)
-})
-
-getMediaPhotographer().then(media => {
-  media.forEach(element => {
-    return createGallery(element)
-  });
-})
-
-*/

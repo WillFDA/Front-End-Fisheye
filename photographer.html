@@ -28,61 +28,10 @@
         </div>
 
         <div class="gallery" id="gallery">
-          <figure class="img-container">
-            <div class="gallery-image"></div>
-            <figcaption class="image-caption">
-              <p>Arc en cie</p>
-              <div class="like-container">
-                <div class="like-count"></div>
-                <div class="like-icon"></div>
-              </div>
-            </figcaption>
-          </figure>
-          <figure class="img-container">
-            <div class="gallery-image"></div>
-            <figcaption class="image-caption">
-              <p>Arc en cie</p>
-              <div class="like-container">
-                <div class="like-count"></div>
-                <div class="like-icon"></div>
-              </div>
-            </figcaption>
-          </figure>
-          <figure class="img-container">
-            <div class="gallery-image"></div>
-            <figcaption class="image-caption">
-              <p>Arc en cie</p>
-              <div class="like-container">
-                <div class="like-count"></div>
-                <div class="like-icon"></div>
-              </div>
-            </figcaption>
-          </figure>
-          <figure class="img-container">
-            <div class="gallery-image"></div>
-            <figcaption class="image-caption">
-              <p>Arc en cie</p>
-              <div class="like-container">
-                <div class="like-count"></div>
-                <div class="like-icon"></div>
-              </div>
-            </figcaption>
-          </figure>
-          <figure class="img-container">
-            <div class="gallery-image"></div>
-            <figcaption class="image-caption">
-              <p>Arc en cie</p>
-              <div class="like-container">
-                <div class="like-count"></div>
-                <div class="like-icon"></div>
-              </div>
-            </figcaption>
-          </figure>
-        
         </div>
       </section>
     </main>
-    <div id="contact_modal">
+    <dialog id="contact_modal">
 			<div class="modal">
 				<header>
           <h2>Contactez-moi</h2>
@@ -90,16 +39,22 @@
         </header>
 				<form>
 					<div>
-						<label>Prénom</label>
-						<input />
+						<label for="firstName">Prénom</label>
+						<input id="firstName" />
+						<label for="lastName">Nom</label>
+						<input id="lastName" />
+						<label for="email">Prénom</label>
+						<input id="email" />
+						<label for="yourMessage">Votre message</label>
+						<textarea name="" id="yourMessage"></textarea>
 					</div>
           <button class="contact_button">Envoyer</button>
 				</form>
 			</div>
-		</div>
+		</dialog>
+    <script src="/scripts/utils/contactForm.js" defer></script>
     <script src="/scripts/templates/index.js"></script>
     <script src="/scripts/pages/photographer.js"></script>
     <script src="/scripts/templates/photographer.js"></script>
-    <script src="/scripts/utils/contactForm.js"></script>
   </body>
 </html>

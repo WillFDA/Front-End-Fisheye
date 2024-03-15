@@ -1,7 +1,26 @@
 #contact_modal {
-    display: none;
+    padding: 0;
+    border-radius: 5px;
+    border: none;
+    width: 100vw;
+    background-color: transparent;
+}
+#contact_modal[open] {
+    animation: slide-up 1000ms forwards, fade-in 500ms forwards;
 }
 
+#contact_modal[closing] {
+    display: block;
+    pointer-events: none;
+    inset: 0;
+    animation: fade-out 500ms forwards;
+  }
+
+
+#yourMessage {
+    resize: none;
+    width: 100%;
+}
 .photograph-header {
     background-color: #FAFAFA;
     height: 300px;
@@ -80,7 +99,6 @@ form input {
 
 .photograph-gallery {
     margin: 0 100px;
-    background-color: red;
     display: flex;
     flex-direction: column;
     margin-top: 16px;
@@ -97,12 +115,14 @@ form input {
     justify-content: space-between;
 }
 
-.gallery-image {
+.img-container img, .img-container video  {
+    width: 100%;
     max-width: 350px;
     height: 300px;
     background-color: black;
     margin-bottom: 8px;
     border-radius: 8px;
+    object-fit: cover;
 }
 
 .image-caption {
@@ -136,4 +156,33 @@ form input {
 
 #sort-options option:not(:last-of-type) {
     border-bottom: 1px solid white; 
+  }
+
+
+
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fade-out {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  
+  @keyframes slide-up {
+    0% {
+      transform: translateY(100%);
+    }
+    100% {
+      transform: translateY(0%);
+    }
   }

@@ -5,7 +5,14 @@ function createElementWithClass(type, className, textContent) {
     return element;
 }
 
-function createImage(src, alt) {
+function createImage(src, alt, type) {
+    if(type === 'video') {
+        const video = document.createElement('video')
+        video.setAttribute('src', `${src}${'#t=0.1'}`)
+        video.setAttribute('alt', alt)
+        video.setAttribute('preload', 'metadata')
+        return video
+    }
     const img = document.createElement('img');
     img.setAttribute('src', src);
     img.setAttribute('alt', alt);
