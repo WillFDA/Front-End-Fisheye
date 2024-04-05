@@ -9,7 +9,7 @@
     animation: slide-up 1000ms forwards, fade-in 500ms forwards;
 }
 
-#contact_modal[closing] {
+#contact_modal[closing], #lightbox-modal[closing] {
     display: block;
     pointer-events: none;
     inset: 0;
@@ -133,7 +133,6 @@ form input {
 .like-container {
     display: flex;
     gap: 8px;
-    background-color: blue;
 }
 
 
@@ -185,4 +184,19 @@ form input {
     100% {
       transform: translateY(0%);
     }
+  }
+
+  .image-swiper {
+    height: 300px !important;
+    display: block;
+    cursor: pointer;
+  }
+  .btn-invisible {
+    all: unset;
+    outline: revert ;
+  }
+
+  #lightbox-modal {
+    width: 80vw;
+    height: 80vh;
   }

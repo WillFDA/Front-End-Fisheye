@@ -31,28 +31,44 @@
         </div>
       </section>
     </main>
-    <dialog id="contact_modal">
+    <dialog id="lightbox-modal" aria-label="image closeup view">
+      <button class="btn-invisible" onclick="closeLightbox()">
+        <img src="assets/icons/close.svg" />
+      </button>
+      <div class="lightbox-modal">
+        <button class="btn-invisible prevBtn"></button>
+          <div class="lightbox-image-container">
+            <p class="lightbox-image-title"></p>
+          </div>
+        <button class="btn-invisible nextBtn"></button>
+      </div>
+    </dialog>
+
+    <dialog id="contact_modal" aria-labelledby="dialogHeading">
 			<div class="modal">
 				<header>
-          <h2>Contactez-moi</h2>
-          <img src="assets/icons/close.svg" onclick="closeModal()" />
+          <h2 id="dialogHeading">Contactez-moi</h2>
+          <button class="btn-invisible" aria-label="Close Contact Form" onclick="closeModal()">
+            <img src="assets/icons/close.svg" />
+          </button>
         </header>
 				<form>
 					<div>
 						<label for="firstName">Prénom</label>
-						<input id="firstName" />
-						<label for="lastName">Nom</label>
-						<input id="lastName" />
-						<label for="email">Prénom</label>
-						<input id="email" />
+						<input id="firstName" aria-labelledby="firstName" />
+						<label for="lastName" >Nom</label>
+						<input id="lastName" aria-labelledby="lastName"/>
+						<label for="email" >email</label>
+						<input id="email" aria-labelledby="email"/>
 						<label for="yourMessage">Votre message</label>
-						<textarea name="" id="yourMessage"></textarea>
+						<textarea name="" id="yourMessage" aria-labelledby="yourMessage"></textarea>
 					</div>
-          <button class="contact_button">Envoyer</button>
+          <button class="contact_button" aria-label="Send">Envoyer</button>
 				</form>
 			</div>
 		</dialog>
     <script src="/scripts/utils/contactForm.js" defer></script>
+    <script src="/scripts/utils/lightbox-modal.js" defer></script>
     <script src="/scripts/templates/index.js"></script>
     <script src="/scripts/pages/photographer.js"></script>
     <script src="/scripts/templates/photographer.js"></script>
