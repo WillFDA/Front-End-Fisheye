@@ -30,16 +30,19 @@ getThePhotographer().then(data => {
 })
 
 async function createTheGallery(data) {
-  data.media.forEach(content => {
-    const photographModel = photographerTemplate(data)
-    const createGallery = photographModel.createGallery(content)
-    const createLightboxContent = photographModel.createLightboxContent(content)
-    lightBoxImageContainer.append(createLightboxContent.mediaImageLightbox)
-    gallery.append(createGallery.figureElement)
-  })
-  document.querySelectorAll('.image-swiper').forEach((element, index) => element.addEventListener('click', event => {
-    openLightboxModal()
-    LightBoxModalFunction(index)
-  }))
+  
+  data.media.forEach((content, index) => {
+    const photographModel = photographerTemplate(data);
+    const createGallery = photographModel.createGallery(content);
+    const createLightboxContent = photographModel.createLightboxContent(content);
+    lightBoxImageContainer.append(createLightboxContent.mediaImageLightbox);
+    gallery.append(createGallery.figureElement);
+  });
+  document.querySelectorAll('.image-swiper').forEach((element, index) =>
+    element.addEventListener('click', () => {
+      let imageArray = document.querySelectorAll('.lightboxImg')
+      initializeLightbox(imageArray, index)
+    })
+  );
 }
 

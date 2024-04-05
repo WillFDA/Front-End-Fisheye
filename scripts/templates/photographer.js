@@ -45,7 +45,7 @@ function photographerTemplate(data) {
     const { id, photographerId, title, image, video, likes } = medias;
     const pictureMedia = `assets/photographers/${name}/${image ? image : video}`;
     const mediaImageLightbox = createImage(pictureMedia, title, video ? 'video' : 'image');
-    mediaImageLightbox.dataset.id = id;
+    mediaImageLightbox.classList.add('lightboxImg')
     return {mediaImageLightbox}
   }
 

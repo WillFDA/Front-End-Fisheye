@@ -32,15 +32,15 @@
       </section>
     </main>
     <dialog id="lightbox-modal" aria-label="image closeup view">
-      <button class="btn-invisible" onclick="closeLightbox()">
-        <img src="assets/icons/close.svg" />
-      </button>
       <div class="lightbox-modal">
-        <button class="btn-invisible prevBtn"></button>
+        <button class="btn-invisible prevBtn" onclick="swipeLeft()"><</button>
+        <button class="btn-invisible nextBtn" onclick="swipeRight()">></button>
+        <button class="btn-invisible closeBtn" onclick="closeLightbox()">
+          <img src="assets/icons/close.svg" />
+        </button>
           <div class="lightbox-image-container">
             <p class="lightbox-image-title"></p>
           </div>
-        <button class="btn-invisible nextBtn"></button>
       </div>
     </dialog>
 

@@ -200,3 +200,51 @@ form input {
     width: 80vw;
     height: 80vh;
   }
+
+  .lightbox-modal {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    background-color: #901C1C;
+    height: 95%;
+    position: relative;
+  }
+
+  .lightboxImg {
+    display: none;
+  }
+  .showlightBox {
+    display: block;
+  }
+
+  .lightbox-image-container {
+    object-fit: cover;
+    width: 70%;
+    height: 70%;
+    background-color: blue;
+  }
+
+  .lightboxImg {
+    width: 100%;
+    height: 100%;
+  }
+
+  .prevBtn {
+    position: absolute;
+    top: 50%;
+    left: 2rem;
+    transform: translateY(50%);
+  }
+
+  .nextBtn {
+    position: absolute;
+    top: 50%;
+    right: 2rem;
+    transform: translateY(50%);
+  }
+
+  .closeBtn {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+  }
