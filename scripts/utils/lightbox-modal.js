@@ -1,6 +1,6 @@
 const lightBoxModal = document.getElementById("lightbox-modal");
 const lightBoxImage = document.createElement('img');
-
+const title = document.querySelector('.lightbox-image-title')
 let currentIndex = 0;
 let images = []
 function initializeLightbox(imageArray, index) {
@@ -8,12 +8,10 @@ function initializeLightbox(imageArray, index) {
   images = imageArray
   images.forEach(image => image.classList.remove('showlightBox'))
   images[currentIndex].classList.add('showlightBox')
+  title.textContent = imageArray[currentIndex].dataset.title
   lightBoxModal.showModal()
 }
 
-function openModal() {
-
-}
 
 function swipeRight() {
   // Retire la classe 'showlightBox' à toutes les images
@@ -24,6 +22,8 @@ function swipeRight() {
 
   // Ajoute la classe 'showlightBox' à l'image courante
   images[currentIndex].classList.add('showlightBox');
+
+  title.textContent = images[currentIndex].dataset.title
 }
 
 function swipeLeft() {
@@ -35,6 +35,8 @@ function swipeLeft() {
   
     // Ajoute la classe 'showlightBox' à l'image courante
     images[currentIndex].classList.add('showlightBox');
+
+    title.textContent = images[currentIndex].dataset.title
 }
 
 function closeLightbox() {

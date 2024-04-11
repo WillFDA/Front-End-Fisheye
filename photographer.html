@@ -20,12 +20,18 @@
       <section class="photograph-gallery">
         <div class="sorting-controls">
           <label for="sort-options">Trier par</label>
-          <select id="sort-options">
-            <option value="popularity">Popularité</option>
-            <option value="date">Date</option>
-            <option value="title">Titre</option>
-          </select>
+            <div class="dropdown">
+                <button data-opened="false" id="sort-options">
+                  <span class="selected">Popularité</span>
+                  <div class="caret"></div>
+                </button>
+                <ul class="dropdown-content">
+                  <li class="inactive" value="date">date</li>
+                  <li class="inactive" value="title">Titre</li>
+                </ul>
+            </div>
         </div>
+
 
         <div class="gallery" id="gallery">
         </div>
@@ -33,13 +39,15 @@
     </main>
     <dialog id="lightbox-modal" aria-label="image closeup view">
       <div class="lightbox-modal">
-        <button class="btn-invisible prevBtn" onclick="swipeLeft()"><</button>
-        <button class="btn-invisible nextBtn" onclick="swipeRight()">></button>
+        <button class="btn-invisible prevBtn" onclick="swipeLeft()">
+          <img src="assets/icons/left.svg" /></button>
+        <button class="btn-invisible nextBtn" onclick="swipeRight()">
+          <img src="assets/icons/right.svg" /></button>
         <button class="btn-invisible closeBtn" onclick="closeLightbox()">
           <img src="assets/icons/close.svg" />
         </button>
           <div class="lightbox-image-container">
-            <p class="lightbox-image-title"></p>
+            <p class="lightbox-image-title">Test</p>
           </div>
       </div>
     </dialog>
@@ -67,6 +75,7 @@
 				</form>
 			</div>
 		</dialog>
+    <script src="/scripts/utils/dropdown.js" defer></script>
     <script src="/scripts/utils/contactForm.js" defer></script>
     <script src="/scripts/utils/lightbox-modal.js" defer></script>
     <script src="/scripts/templates/index.js"></script>

@@ -1,3 +1,4 @@
+
 #contact_modal {
     padding: 0;
     border-radius: 5px;
@@ -104,10 +105,7 @@ form input {
     margin-top: 16px;
 }
 
-.sorting-controls {
-    display: flex;
-    gap: 16px;
-}
+
 
 #gallery {
     display: grid;
@@ -136,27 +134,74 @@ form input {
 }
 
 
-
+.sorting-controls {
+    display: flex;
+    gap: 16px;
+}
 .sorting-controls label {
     font: 700;
     font-size: 18px;
 }
 
-#sort-options {
-    color: white;
-    background-color: #901C1C;
-    padding: 8px;
-    border: none;
-}
-#sort-options option {
-    background-color: #901C1C ;
-    color: white;
+.dropdown {
+  background-color: #901C1C;
+  display: flex;
+  flex-direction: column;
+  padding: 0px 12px;
+  color: white;
+  border-radius: 5px;
+  width: 100px;
 }
 
-#sort-options option:not(:last-of-type) {
-    border-bottom: 1px solid white; 
-  }
+#sort-options { 
+  all: unset;
+  display: flex;
+  gap: 16px;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid white;
+  cursor: pointer;
+  border-bottom: white solid 1px;
+  padding: 12px 0px;
+}
 
+.dropdown-content {
+  margin: 0px;
+  padding: 0px;
+}
+
+.dropdown-content li {
+  padding: 12px 0px;
+  list-style: none;
+  border-bottom: 1px solid white;
+  cursor: pointer;
+}
+
+
+#sort-options[data-opened="false"] {
+  border-bottom: none;
+}
+
+.caret {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid white;
+  transition: all 0.3s ease;
+}
+
+.dropdown-content li:last-child {
+  border-bottom: none;
+}
+
+.inactive {
+  display: none;
+}
+
+.rotate {
+  transform: rotate(180deg);
+}
 
 
   @keyframes fade-in {
@@ -205,7 +250,6 @@ form input {
     justify-content: center;
     align-items: center;
     display: flex;
-    background-color: #901C1C;
     height: 95%;
     position: relative;
   }
@@ -221,12 +265,20 @@ form input {
     object-fit: cover;
     width: 70%;
     height: 70%;
-    background-color: blue;
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 16px;
+  }
+
+  .lightbox-image-title {
+    color: #901C1C;
+    font-size: 24px;
   }
 
   .lightboxImg {
     width: 100%;
     height: 100%;
+    object-fit: cover;
   }
 
   .prevBtn {
@@ -234,6 +286,7 @@ form input {
     top: 50%;
     left: 2rem;
     transform: translateY(50%);
+    cursor: pointer;
   }
 
   .nextBtn {
@@ -241,10 +294,14 @@ form input {
     top: 50%;
     right: 2rem;
     transform: translateY(50%);
+    cursor: pointer;
   }
 
   .closeBtn {
     position: absolute;
     top: 2rem;
     right: 2rem;
+    cursor: pointer;
+    color: #901C1C;
   }
+

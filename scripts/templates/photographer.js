@@ -27,7 +27,6 @@ function photographerTemplate(data) {
     const likeCount = createElementWithClass('p', 'like-count', likes);
     const likeIcon = createElementWithClass('i', 'like-icon');
     const link = createElementWithClass('a', 'image-swiper');
-    link.dataset.id = id;
     
     figureElement.append(link, figcaption);
     figcaption.append(p, likeContainer);
@@ -46,6 +45,7 @@ function photographerTemplate(data) {
     const pictureMedia = `assets/photographers/${name}/${image ? image : video}`;
     const mediaImageLightbox = createImage(pictureMedia, title, video ? 'video' : 'image');
     mediaImageLightbox.classList.add('lightboxImg')
+    mediaImageLightbox.dataset.title = title
     return {mediaImageLightbox}
   }
 
