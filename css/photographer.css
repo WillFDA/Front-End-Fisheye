@@ -124,13 +124,19 @@ form input {
 }
 
 .image-caption {
+  margin-top: 8px;
     display: flex;
     justify-content: space-between;
+    color: #901C1C;
 }
 
 .like-container {
     display: flex;
+    align-items: center;
     gap: 8px;
+}
+.like-count {
+  font-weight: bold;
 }
 
 
@@ -305,3 +311,34 @@ form input {
     color: #901C1C;
   }
 
+.tarif {
+  position: fixed;
+  bottom: 0;
+  right: 32px;
+  width: 375px;
+  height: 80px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #DB8876;
+  color: black;
+  border-radius: 5px 5px 0 0;
+  font-size: 24px;
+}
+.total-likes-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.total-likes-container .heart path {
+  fill: black;
+}
+
+.toggle-like {
+  cursor: pointer;
+  height: 17px;
+}
+.toggle-like path {
+  fill: #901C1C;
+}
