@@ -143,6 +143,7 @@ form input {
 .sorting-controls {
     display: flex;
     gap: 16px;
+    margin-bottom: 32px;
 }
 .sorting-controls label {
     font: 700;
@@ -157,6 +158,12 @@ form input {
   color: white;
   border-radius: 5px;
   width: 100px;
+  position: absolute; /* Ajouté */
+  z-index: 2; /* Ajouté */
+}
+
+.dropdown-container {
+  position: relative;
 }
 
 #sort-options { 

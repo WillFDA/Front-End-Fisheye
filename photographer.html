@@ -29,6 +29,7 @@
       <section class="photograph-gallery">
         <div class="sorting-controls">
           <label for="sort-options">Trier par</label>
+          <div class="dropdown-container">
             <div class="dropdown">
                 <button data-opened="false" id="sort-options">
                   <span class="selected">Popularité</span>
@@ -39,6 +40,7 @@
                   <li class="inactive" value="title">Titre</li>
                 </ul>
             </div>
+          </div>
         </div>
 
 
@@ -90,5 +92,6 @@
     <script src="/scripts/templates/index.js"></script>
     <script src="/scripts/pages/photographer.js"></script>
     <script src="/scripts/templates/photographer.js"></script>
+    <script src="/scripts/utils/like.js" defer></script>
   </body>
 </html>

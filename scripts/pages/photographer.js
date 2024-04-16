@@ -38,6 +38,7 @@ async function createTheGallery(data) {
     lightBoxImageContainer.append(createLightboxContent.mediaImageLightbox);
     gallery.append(createGallery.figureElement);
   });
+  initLikes(document.querySelectorAll('.toggle-like'))
   document.querySelectorAll('.image-swiper').forEach((element, index) =>
     element.addEventListener('click', () => {
       let imageArray = document.querySelectorAll('.lightboxImg')
