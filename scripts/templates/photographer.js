@@ -1,7 +1,6 @@
 
 function photographerTemplate(data) {
   const { name, portrait, city, country, tagline } = data.photographers
-  console.log
   function createPhotographeHeader() {
       const picture = `assets/photographers/${portrait}`;
       const altText = `${name}'s portrait`;
@@ -50,6 +49,8 @@ function photographerTemplate(data) {
     mediaImageLightbox.dataset.title = title
     return {mediaImageLightbox}
   }
+
+  
 
 
   return {createGallery, createPhotographeHeader, addNameInContactForm, createLightboxContent}

@@ -1,8 +1,7 @@
-let likeBtn = [];
+
 
 function initLikes(likes) {
-  likeBtn = likes;
-  console.log(likeBtn);
+  let likeBtn = likes;
   likeBtn.forEach(button => {
     let clicked = false; // Initialiser clicked pour chaque bouton
     button.addEventListener('click', function (e) {
@@ -12,12 +11,12 @@ function initLikes(likes) {
       if (clicked) {
         clicked = false;
         closestLikeCount.textContent = parseInt(closestLikeCount.textContent) - 1;
+        totalLikesSpan.textContent = parseInt(totalLikesSpan.textContent) - 1;
       } else {
         clicked = true;
         closestLikeCount.textContent = parseInt(closestLikeCount.textContent) + 1;
+        totalLikesSpan.textContent = parseInt(totalLikesSpan.textContent) + 1;
       }
     });
   });
 }
-
-console.log(likeBtn);

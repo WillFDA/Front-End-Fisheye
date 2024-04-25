@@ -26,19 +26,41 @@ getThePhotographer().then(data => {
   photographerTemplate(data).addNameInContactForm()
   photographHeader.prepend(photographModel.infoPhotograph)
   photographHeader.append(photographModel.imagePhotograph)
-  createTheGallery(data)
+  createTheGallery(data, 'likes')
+  initDropdown(data)
+  initQuickInfo(data)
+  
 })
 
-async function createTheGallery(data) {
-  
-  data.media.forEach((content, index) => {
+async function createTheGallery(data, sortBy = 'likes') {
+  let sortMedia
+
+  switch (sortBy) {
+    case 'likes':
+      sortMedia = data.media.sort((a, b) => b.likes - a.likes)
+      break;
+    case 'date':
+      sortMedia = data.media.sort((a, b) => new Date(b.date) - new Date(a.date))
+      break;
+    case 'title':
+      sortMedia = data.media.sort((a, b) => a.title.localeCompare(b.title))
+      break;
+  }
+
+  gallery.innerHTML = ''
+  lightBoxImageContainer.querySelectorAll('.lightboxImg').forEach(image => image.remove())
+
+
+  sortMedia.forEach((content, index) => {
     const photographModel = photographerTemplate(data);
     const createGallery = photographModel.createGallery(content);
     const createLightboxContent = photographModel.createLightboxContent(content);
     lightBoxImageContainer.append(createLightboxContent.mediaImageLightbox);
     gallery.append(createGallery.figureElement);
   });
+
   initLikes(document.querySelectorAll('.toggle-like'))
+  
   document.querySelectorAll('.image-swiper').forEach((element, index) =>
     element.addEventListener('click', () => {
       let imageArray = document.querySelectorAll('.lightboxImg')

@@ -3,7 +3,9 @@ const lightBoxImage = document.createElement('img');
 const title = document.querySelector('.lightbox-image-title')
 let currentIndex = 0;
 let images = []
+
 function initializeLightbox(imageArray, index) {
+  console.log(title)
   currentIndex = index
   images = imageArray
   images.forEach(image => image.classList.remove('showlightBox'))
