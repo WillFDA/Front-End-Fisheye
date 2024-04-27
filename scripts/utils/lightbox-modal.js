@@ -12,8 +12,18 @@ function initializeLightbox(imageArray, index) {
   images[currentIndex].classList.add('showlightBox')
   title.textContent = imageArray[currentIndex].dataset.title
   lightBoxModal.showModal()
+  document.addEventListener('keydown', (e) => handleKeydown(e))
 }
 
+function handleKeydown(e) {
+  if (e.key === 'Escape') {
+    closeLightbox()
+  } else if (e.key === 'ArrowRight') {
+    swipeRight()
+  } else if (e.key === 'ArrowLeft') {
+    swipeLeft()
+  }
+}
 
 function swipeRight() {
   // Retire la classe 'showlightBox' à toutes les images
