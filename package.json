@@ -1,0 +1,18 @@
+{
+  "name": "front-end-fisheye-main",
+  "version": "1.0.0",
+  "description": "## Démarrer le projet",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "http-server",
+    "lint": "eslint scripts/utils/*.js scripts/templates/*.js scripts/pages/*.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^9.1.1",
+    "globals": "^15.1.0"
+  }
+}

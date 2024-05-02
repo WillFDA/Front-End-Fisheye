@@ -44,6 +44,9 @@ function photographerTemplate(data) {
     const { title, image, video } = medias;
     const pictureMedia = `assets/photographers/${name}/${image ? image : video}`;
     const mediaImageLightbox = createImage(pictureMedia, title, video ? 'video' : 'image');
+    if (video) {
+      mediaImageLightbox.controls = true
+    }
     mediaImageLightbox.classList.add('lightboxImg')
     mediaImageLightbox.dataset.title = title
     return {mediaImageLightbox}
