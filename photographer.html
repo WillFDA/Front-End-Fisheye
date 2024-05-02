@@ -1,12 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
   <head>
     <link href="css/style.css" rel="stylesheet" type="text/css" />
     <meta charset="utf-8">
     <link rel="icon" type="image/png" href="assets/favicon.png">
     <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
     <title>Fisheye - photographe </title>
-    <meta lang="fr">
   </head>
   <body>
     <div class="tarif">
@@ -25,7 +24,7 @@
     </header>
     <main id="main">
       <div class="photograph-header">
-        <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
+        <button class="contact_button" o@nclick="displayModal()">Contactez-moi</button>
       </div>
       <section class="photograph-gallery">
         <div class="sorting-controls">
@@ -50,9 +49,9 @@
     <dialog id="lightbox-modal" aria-label="image closeup view">
       <div class="lightbox-modal">
         <button class="btn-invisible prevBtn" onclick="swipeLeft()">
-          <img src="assets/icons/left.svg" /></button>
+          <img src="assets/icons/left.svg" alt="left arrow icon" /></button>
         <button class="btn-invisible nextBtn" onclick="swipeRight()">
-          <img src="assets/icons/right.svg" /></button>
+          <img src="assets/icons/right.svg" alt="right arrow icon" /></button>
         <button class="btn-invisible closeBtn" onclick="closeLightbox()">
           <img src="assets/icons/close.svg" alt="close icon" />
         </button>
@@ -67,7 +66,7 @@
 				<header>
           <h2 id="dialogHeading">Contactez-moi</h2>
           <button class="btn-invisible" aria-label="Close Contact Form" onclick="closeModal()">
-            <img src="assets/icons/close.svg" />
+            <img src="assets/icons/close.svg" alt="close icon" />
           </button>
         </header>
 				<form onsubmit="submitForm(event)">
