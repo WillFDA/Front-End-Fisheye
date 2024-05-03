@@ -27,21 +27,26 @@
         <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
       </div>
       <section class="photograph-gallery">
+
+
         <div class="sorting-controls">
           <label for="sort-options">Trier par</label>
-          <div class="dropdown-container">
-            <div class="dropdown">
-              <button id="sort-options" role="button" aria-haspopup="listbox" role="combobox" aria-expanded="false" aria-controls="listbox" tabindex="0">
-                <span class="selected">Popularité</span>
-                <div class="caret"></div>
-              </button>
-              <ul class="dropdown-content" role="listbox" aria-labelledby="sort-options" id="listbox" aria-activedescendant="">
-                <li role="option" class="inactive" value="date" aria-selected="false">date</li>
-                <li role="option" class="inactive" value="title" aria-selected="false">Titre</li>
-              </ul>
+            <div class="dropdown-container">
+              <div class="dropdown">
+                <button id="sort-options" role="button" aria-haspopup="true" aria-expanded="false" aria-controls="listbox" tabindex="0">
+                  <span class="selected">Popularité</span>
+                  <div class="caret"></div>
+                </button>
+                <div role="listbox" id="listbox" aria-labelledby="sort-options">
+                  <button role="option" aria-hidden="true" class="dropdown-btn" value="date" aria-selected="false" tabindex="-1">date</button>
+                  <button role="option" aria-hidden="true" class="dropdown-btn" value="title" aria-selected="false" tabindex="-1">Titre</button>
+                </div>
+              </div>
             </div>
-          </div>
         </div>
+
+
+
         <div class="gallery" id="gallery">
         </div>
       </section>

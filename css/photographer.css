@@ -171,6 +171,10 @@ form input {
   position: relative;
 }
 
+#sort-options:focus {
+  outline: blue solid 1px;
+}
+
 #sort-options { 
   all: unset;
   display: flex;
@@ -188,11 +192,25 @@ form input {
   padding: 0px;
 }
 
-.dropdown-content li {
+.dropdown-btn {
+  all: unset;
+  display: block;
+  width: 100%;
   padding: 12px 0px;
   list-style: none;
   border-bottom: 1px solid white;
   cursor: pointer;
+}
+.dropdown-btn:focus {
+  outline: white solid 1px;
+}
+
+.dropdown-btn[aria-hidden="true"] {
+  display: none;
+}
+
+.dropdown-btn[aria-expanded="true"] {
+  display: block;
 }
 
 
@@ -209,12 +227,8 @@ form input {
   transition: all 0.3s ease;
 }
 
-.dropdown-content li:last-child {
+.dropdown button:last-child {
   border-bottom: none;
-}
-
-.inactive {
-  display: none;
 }
 
 .rotate {
@@ -302,7 +316,7 @@ form input {
   .lightboxImg {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: scale-down;
   }
 
   .prevBtn {
