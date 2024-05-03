@@ -9,6 +9,7 @@ let selectedValue = selected.textContent;
 function initDropdown(data) {
   // Ajoute un écouteur d'événement au clic sur le bouton du dropdown
   dropdown.addEventListener('click', function(e) {
+    e.preventDefault();
     // Bascule l'attribut aria-expanded pour ouvrir/fermer le dropdown
     if (dropdown.getAttribute('aria-expanded') === "false") {
       dropdown.setAttribute('aria-expanded', "true");

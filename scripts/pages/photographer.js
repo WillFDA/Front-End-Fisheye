@@ -59,13 +59,12 @@ async function createTheGallery(data, sortBy = 'likes') {
     const createGallery = photographModel.createGallery(content); // Crée les éléments HTML pour la galerie
     const createLightboxContent = photographModel.createLightboxContent(content); // Crée les éléments HTML pour la lightbox
     lightBoxImageContainer.append(createLightboxContent.mediaImageLightbox); // Ajoute l'image à la lightbox
-    gallery.append(createGallery.figureLink); // Ajoute l'élément à la galerie
+    gallery.append(createGallery.figureElement); // Ajoute l'élément à la galerie
   });
 
   initLikes(document.querySelectorAll('.toggle-like')); // Initialise les boutons de likes
 
-  // Ajoute un écouteur d'événement pour ouvrir la lightbox lorsqu'une image est cliquée
-  document.querySelectorAll('.img-container').forEach((element, index) => element.addEventListener('click', () => {
+  document.querySelectorAll('.image-swiper').forEach((element, index) => element.addEventListener('click', () => {
     let imageArray = document.querySelectorAll('.lightboxImg'); // Récupère toutes les images de la lightbox
     initializeLightbox(imageArray, index); // Ouvre la lightbox avec l'image cliquée
   }));

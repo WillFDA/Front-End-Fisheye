@@ -8,6 +8,7 @@ function initLikes(likes) {
 
     // Ajoute un écouteur d'événement 'click' à chaque bouton
     button.addEventListener('click', function (e) {
+      e.preventDefault();
       // Trouve le conteneur le plus proche contenant le bouton et le compteur de likes
       const likeContainer = e.currentTarget.closest('.like-container');
       const closestLikeCount = likeContainer.querySelector('.like-count');

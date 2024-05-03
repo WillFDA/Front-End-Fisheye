@@ -115,12 +115,17 @@ form input {
 #gallery {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 350px));
+    row-gap: 32px;
     justify-content: space-between;
 }
 
+.img-container {
+  text-decoration: none;
+}
+
 .img-container img, .img-container video  {
+    text-decoration: none;
     width: 100%;
-    max-width: 350px;
     height: 300px;
     background-color: black;
     margin-bottom: 8px;
@@ -128,11 +133,19 @@ form input {
     object-fit: cover;
 }
 
+figure {
+    margin: 0;
+}
+
 .image-caption {
   margin-top: 8px;
     display: flex;
     justify-content: space-between;
     color: #901C1C;
+}
+
+.image-caption p {
+    font-size: 24px;
 }
 
 .like-container {
@@ -148,7 +161,7 @@ form input {
 .sorting-controls {
     display: flex;
     gap: 16px;
-    margin-bottom: 32px;
+    margin-bottom: 64px;
 }
 .sorting-controls label {
     font: 700;
@@ -371,6 +384,6 @@ form input {
   cursor: pointer;
   height: 17px;
 }
-.toggle-like path {
+.toggle-like svg path {
   fill: #901C1C;
 }
