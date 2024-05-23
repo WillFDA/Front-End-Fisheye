@@ -70,7 +70,6 @@ function initDropdown(data) {
           sortBy = 'title';
           break;
       }
-
       // Crée la galerie triée selon le critère choisi
       createTheGallery(data, sortBy);
     });
