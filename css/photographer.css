@@ -387,3 +387,14 @@ figure {
 .toggle-like svg path {
   fill: #901C1C;
 }
+
+.heart-outlined .heart-path {
+  fill: none;
+  stroke: #901C1C;
+  stroke-width: 1.5;
+}
+
+.heart-filled .heart-path {
+  fill: #901C1C;
+  stroke: none;
+}
