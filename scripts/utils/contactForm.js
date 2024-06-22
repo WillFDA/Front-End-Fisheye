@@ -7,10 +7,10 @@ const message = document.getElementById("yourMessage"); // Le champ de message
 const submitButton = document.querySelector('.contact_button'); // Le bouton de soumission
 const form = document.getElementById('form')
 const contactButton = document.querySelector('.contact_button')
-const closeButton = document.querySelector('.close-contact') // Le bouton de fermeture
+const closeContactModal = document.querySelector('.close-contact') // Le bouton de fermeture
 form.addEventListener('submit', submitForm); // Ajoute un écouteur d'événement sur la soumission du formulaire
 contactButton.addEventListener('click', displayModal); // Ajoute un écouteur d'événement sur le clic du bouton de contact
-closeButton.addEventListener('click', closeModal); // Ajoute un écouteur d'événement sur le clic du bouton de fermeture
+closeContactModal.addEventListener('click', closeModal); // Ajoute un écouteur d'événement sur le clic du bouton de fermeture
 // Fonction pour afficher la fenêtre modale
 function displayModal() {
   modal.showModal(); // Affiche la fenêtre modale
