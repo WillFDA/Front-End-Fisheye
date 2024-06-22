@@ -1,8 +1,13 @@
 const lightBoxModal = document.getElementById("lightbox-modal");
 const lightBoxImage = document.createElement('img');
 const title = document.querySelector('.lightbox-image-title')
+const previousButton = document.querySelector('.prevBtn')
+const nextButton = document.querySelector('.nextBtn')
+const closeButton = document.querySelector('.closeBtn')
 let currentIndex = 0;
 let images = []
+
+
 
 function initializeLightbox(imageArray, index) {
   console.log(title)
@@ -63,3 +68,7 @@ function closeLightbox() {
   );
   images = []
 }
+
+previousButton.addEventListener('click', swipeLeft)
+nextButton.addEventListener('click', swipeRight)  
+closeButton.addEventListener('click', closeLightbox)

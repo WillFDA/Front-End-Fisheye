@@ -24,7 +24,7 @@
     </header>
     <main id="main">
       <div class="photograph-header">
-        <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
+        <button class="contact_button">Contactez-moi</button>
       </div>
       <section class="photograph-gallery">
 
@@ -53,11 +53,11 @@
     </main>
     <dialog id="lightbox-modal" aria-label="image closeup view">
       <div class="lightbox-modal">
-        <a href="#" class="btn-invisible prevBtn" onclick="swipeLeft()">
+        <a href="#" class="btn-invisible prevBtn">
           <img src="assets/icons/left.svg" alt="left arrow icon" /></a>
-        <a href="#" class="btn-invisible nextBtn" onclick="swipeRight()">
+        <a href="#" class="btn-invisible nextBtn">
           <img src="assets/icons/right.svg" alt="right arrow icon" /></a>
-        <button class="btn-invisible closeBtn" onclick="closeLightbox()">
+        <button class="btn-invisible closeBtn">
           <img src="assets/icons/close.svg" alt="close icon" />
         </button>
           <div class="lightbox-image-container">
@@ -70,11 +70,11 @@
 			<div class="modal">
 				<header>
           <h2 id="dialogHeading">Contactez-moi</h2>
-          <button class="btn-invisible" aria-label="Close Contact Form" onclick="closeModal()">
+          <button class="btn-invisible close-contact" aria-label="Close Contact Form">
             <img src="assets/icons/close.svg" alt="close icon" />
           </button>
         </header>
-				<form onsubmit="submitForm(event)">
+				<form id="form">
 					<div>
 						<label for="firstName">Prénom</label>
 						<input id="firstName" aria-labelledby="firstName" />
@@ -89,13 +89,13 @@
 				</form>
 			</div>
 		</dialog>
-    <script src="/scripts/utils/quickInfo.js" defer></script>
-    <script src="/scripts/utils/dropdown.js" defer></script>
-    <script src="/scripts/utils/contactForm.js" defer></script>
-    <script src="/scripts/utils/lightbox-modal.js" defer></script>
-    <script src="/scripts/templates/index.js"></script>
-    <script src="/scripts/pages/photographer.js"></script>
-    <script src="/scripts/templates/photographer.js"></script>
-    <script src="/scripts/utils/like.js" defer></script>
+    <script src="scripts/utils/quickInfo.js" defer></script>
+    <script src="scripts/utils/dropdown.js" defer></script>
+    <script src="scripts/utils/contactForm.js" defer></script>
+    <script src="scripts/utils/lightbox-modal.js" defer></script>
+    <script src="scripts/templates/index.js"></script>
+    <script src="scripts/pages/photographer.js"></script>
+    <script src="scripts/templates/photographer.js"></script>
+    <script src="scripts/utils/like.js" defer></script>
   </body>
 </html>
