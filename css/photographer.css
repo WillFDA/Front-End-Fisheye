@@ -98,10 +98,12 @@
 }
 
 .modal header h2 {
-    font-size: 60px;
+    font-size: 3rem;
     font-weight: normal;
     text-align: left;
 }
+
+
 
 form {
     display: flex;
