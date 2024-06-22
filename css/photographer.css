@@ -3,9 +3,29 @@
     padding: 0;
     border-radius: 5px;
     border: none;
-    width: 60vw;
+    width: 100vw;
     background-color: transparent;
 }
+
+@media screen and (max-width: 768px) {
+    #contact_modal {
+        width: 100vw;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    #contact_modal {
+        width: 70vw;
+    }
+}
+
+@media screen and (min-width: 1300px) {
+    #contact_modal {
+        width: 60vw;
+    }
+}
+
+
 #contact_modal[open] {
     animation: slide-up 1000ms forwards, fade-in 500ms forwards;
 }
@@ -58,6 +78,13 @@
     padding: 32px;
     margin: auto;
 }
+
+@media screen and (max-width: 768px) {
+    .modal {
+        width: 100%;
+    }
+}
+
 
 .modal header {
     display: flex;
