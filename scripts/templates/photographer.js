@@ -41,7 +41,7 @@ function photographerTemplate(data) {
 
   // Fonction pour ajouter le nom du photographe dans la boîte de dialogue de contact
   function addNameInContactForm() {
-    document.getElementById('dialogHeading').textContent = `Contactez moi ${name}`
+    document.getElementById('dialogHeading').innerHTML = 'Contactez moi </br>' + name
   }
 
   // Fonction pour créer le contenu de la lightbox pour un média
